@@ -21,7 +21,7 @@ location = "West Europe"
 
 
 app_service_plan_name    = "my-app-service-plan"
-sku_name    = "Standard"
+sku_name    = "B1"
 os_type = "Linux"  
 webapp_name              = "my-web-app"
 app_settings = {
@@ -33,7 +33,7 @@ account_tier             = "Standard"
 account_replication_type = "LRS"
 
 bot_name             = "my-bot"
-sku                  = "B1"
+sku                  = "F0"
 microsoft_app_id     = "00000003-0000-0000-c000-000000000000"
 microsoft_app_secret = "YOUR_MICROSOFT_APP_SECRET"
 endpoint             = "endpoint"
