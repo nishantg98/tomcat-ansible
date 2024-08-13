@@ -36,13 +36,12 @@ locals {
 
 module "webapp" {
   source                   = "./modules/webapp"
-  resource_group_name      = azurerm_resource_group.rg.name
-  location                 = azurerm_resource_group.rg.location
+  resource_group_name      = var.resource_group_name
+  location                 = var.location
   app_service_plan_name    = var.app_service_plan_name
   os_type                  = var.os_type
   sku_name                 = var.sku_name
   webapp_name              = var.webapp_name
-  dotnet_framework_version = var.dotnet_framework_version
   app_settings             = var.app_settings
 
   tags = local.tags
@@ -51,8 +50,8 @@ module "webapp" {
 
 module "storage_account" {
   source                   = "./modules/storage_account"
-  resource_group_name      = azurerm_resource_group.rg.name
-  location                 = azurerm_resource_group.rg.location
+  resource_group_name      = var.resource_group_name
+  location                 = var.location
   storage_account_name     = var.storage_account_name
   account_tier             = var.account_tier
   account_replication_type = var.account_replication_type
@@ -64,8 +63,8 @@ module "storage_account" {
 
 module "bot_service" {
   source               = "./modules/bot_service"
-  resource_group_name  = azurerm_resource_group.rg.name
-  location             = azurerm_resource_group.rg.location
+  resource_group_name  = var.resource_group_name
+  location             = var.location
   bot_name             = var.bot_name
   sku                  = var.sku
   microsoft_app_id     = var.microsoft_app_id
