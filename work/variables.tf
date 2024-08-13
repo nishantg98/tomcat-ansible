@@ -101,11 +101,6 @@ variable "webapp_name" {
   type        = string
 }
 
-variable "dotnet_framework_version" {
-  description = "The .NET Framework version for the Web App"
-  type        = string
-}
-
 variable "app_settings" {
   description = "A map of key-value pairs for app settings"
   type        = map(string)
