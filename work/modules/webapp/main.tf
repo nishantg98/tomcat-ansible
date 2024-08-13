@@ -8,15 +8,13 @@ resource "azurerm_service_plan" "asp" {
 
 }
 
-resource "azurerm_app_service" "app" {
+resource "azurerm_linux_web_app" "app" {
   name                = var.webapp_name
   location            = var.location
   resource_group_name = var.resource_group_name
-  app_service_plan_id = azurerm_service_plan.asp.id
+  service_plan_id = azurerm_service_plan.asp.id
 
-  site_config {
-    dotnet_framework_version = var.dotnet_framework_version
-  }
+  site_config { }
 
   app_settings = var.app_settings
 
